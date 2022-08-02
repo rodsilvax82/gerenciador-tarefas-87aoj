@@ -11,7 +11,7 @@ async (req : NextApiRequest, res : NextApiResponse<DefaultMsgResponse>) => {
         return handler(req,res);
     };
 
-    const DB_CONNECTIONSTRING = 'mongodb://localhost:27017/87aoj-gerenciador-tarefas';
+    const DB_CONNECTIONSTRING = 'mongodb://127.0.0.1:27017/87aoj-gerenciador-tarefas';
     mongoose.connection.on('connected', () => console.log('Conectado no banco de dados'));
     mongoose.connection.on('error', err => console.log('Erro ao conectar no banco de dados',err));
     await mongoose.connect(DB_CONNECTIONSTRING);
