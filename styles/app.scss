@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./configs.scss";
 
 @font-face {
     font-family: "Biennale Regular";
@@ -25,3 +26,4 @@ body{
     }
 }
 @import './login.scss';
+@import './header.scss';

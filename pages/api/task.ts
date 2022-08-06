@@ -6,6 +6,7 @@ import { TaskRequest } from '../../types/TaskRequest';
 import moment from 'moment';
 import { TaskModel } from '../../models/TaskModel';
 import { GetTasksParams } from '../../types/GetTasksParams';
+import { corsPolicy } from '../../middlewares/corsMidd';
 
 const taskEndpoint = async (req: NextApiRequest, res: NextApiResponse<DefaultResponseMsg | any>) => {
 
@@ -143,4 +144,5 @@ const getTasks = async (req: NextApiRequest, res: NextApiResponse, userId: strin
     return res.status(200).json(result);
 }
 
-export default connectDb(jwtValidator(taskEndpoint));
+// export default connectDb(jwtValidator(taskEndpoint));
+export default corsPolicy(connectDb(taskEndpoint));

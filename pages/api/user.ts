@@ -4,6 +4,7 @@ import { UserRequest } from '../../types/UserRequest';
 import { connectDb} from '../../middlewares/connectDb';
 import md5 from 'md5';
 import { UserModel } from '../../models/UserModel';
+import { corsPolicy } from '../../middlewares/corsMidd';
 
 const userEndpoint = async (req : NextApiRequest, res : NextApiResponse<DefaultResponseMsg>) => {
 
@@ -40,4 +41,5 @@ const userEndpoint = async (req : NextApiRequest, res : NextApiResponse<DefaultR
     return res.status(405).json({ error : 'Metodo infomado não é valido'});
 }
 
-export default connectDb(userEndpoint);
+// export default connectDb(userEndpoint);
+export default corsPolicy(connectDb(userEndpoint));
