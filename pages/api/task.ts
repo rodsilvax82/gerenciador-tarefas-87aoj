@@ -12,6 +12,7 @@ const taskEndpoint = async (req: NextApiRequest, res: NextApiResponse<DefaultRes
 
     const { userId } = req?.body || req?.query;
 
+    console.log(req.body);
     switch (req.method) {
         case 'POST':
             return await saveTask(req, res, userId);
@@ -145,4 +146,4 @@ const getTasks = async (req: NextApiRequest, res: NextApiResponse, userId: strin
 }
 
 // export default connectDb(jwtValidator(taskEndpoint));
-export default corsPolicy(connectDb(taskEndpoint));
+export default corsPolicy(connectDb(jwtValidator(taskEndpoint)));

@@ -31,8 +31,8 @@ export const Login:NextPage<LoginProps> = ({setAccessToken}) => {
 
                 const{name,email,token} = result.data;
                 localStorage.setItem('accessToken',token);
-                localStorage.setItem('username',name);
-                localStorage.setItem('usermail',email);
+                localStorage.setItem('userName',name);
+                localStorage.setItem('userMail',email);
                 setAccessToken(token);
             }
         }catch(e:any){
