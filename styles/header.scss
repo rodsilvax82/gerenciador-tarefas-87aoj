@@ -1,4 +1,4 @@
-@import './configs.scss';
+@import './config.scss';
 
 .container-header{
     display: flex;
@@ -61,7 +61,7 @@
             width: 175px;
             height: 40px;
             align-items: center;
-            padding: 2px 1px;
+
             span {
                 font-size: 24px;
                 letter-spacing: 2px;
